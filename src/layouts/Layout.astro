@@ -1,0 +1,88 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title = "PAUMAR | Producent kartonów ozdobnych od 2005",
+  description = "Projektujemy i produkujemy kartony ozdobne dla marek, które liczą się z detalem — od pierwszego szkicu po paletę gotową do wysyłki.",
+  image = "/og-image.jpg",
+  canonicalURL = Astro.url.href,
+} = Astro.props;
+
+// Schema.org struktura dla robotów wyszukiwarki (Google Rich Results)
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "Manufacturer"],
+  name: "PAUMAR sp. z o.o.",
+  alternateName: "PAUMAR Producent Opakowań",
+  url: "https://paumar.pl",
+  logo: "https://paumar.pl/logo.jpg",
+  image: "https://paumar.pl/og-image.jpg",
+  description: description,
+  telephone: "+48111222333",
+  email: "biuro@paumar.pl",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "ul. Poranna 11",
+    addressLocality: "Plewiska",
+    postalCode: "62-064",
+    addressCountry: "PL",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "Poland",
+  },
+  sameAs: ["https://facebook.com/twoj-profil-paumar"],
+};
+---
+
+<!doctype html>
+<html lang="pl" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Podstawowe SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="pl_PL" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+  <body
+    class="bg-white text-body font-sans antialiased selection:bg-primary/10 selection:text-primary"
+  >
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,192 @@
+---
+
+---
+
+<section class="w-full pt-space-xl-3xl">
+  <!-- Kontener 1400px -->
+  <div class="site-wrapper">
+    <!-- Zwężony odstęp (gap-space-s): kolumny są blisko siebie, teksty mają pełną swobodę -->
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-space-s lg:gap-8 items-stretch w-full"
+    >
+      <!-- LEWA KOLUMNA: Treść -->
+      <div class="flex flex-col justify-between items-start text-left w-full">
+        <!-- 1. Teksty -->
+        <div class="order-1 w-full">
+          <!-- Nadtytuł w JetBrains Mono -->
+          <p
+            class="font-mono text-step--1 font-medium tracking-[0.18em] text-primary uppercase mb-space-xs"
+          >
+            PRODUCENT KARTONÓW OZDOBNYCH OD 2005
+          </p>
+
+          <!-- Nagłówek H1: dokładnie 2 linijki z miękkim łamaniem -->
+          <h1
+            class="font-heading text-step-4 font-bold text-body tracking-tight leading-[1.08] mb-space-s"
+          >
+            Opakowanie, które <br class="hidden sm:inline" />
+            <span class="text-primary">domyka</span> Twój produkt
+          </h1>
+
+          <!-- Lead paragraph: pełna szerokość kolumny, brak sztucznego max-w-xl -->
+          <p
+            class="text-step-0 text-body/90 font-normal leading-relaxed mb-space-m"
+          >
+            Projektujemy i produkujemy kartony ozdobne dla marek, które liczą
+            się z detalem — od pierwszego szkicu po paletę gotową do wysyłki. <strong
+              >Zaufaj nam.</strong
+            >
+          </p>
+        </div>
+
+        <!-- 2. Przycisk ZOBACZ OFERTĘ:
+             - na desktopie: dociągnięty idealnie do prawej krawędzi kolumny (w-full justify-end)
+             - na mobile: order-3, na środku -->
+        <div
+          class="order-3 lg:order-2 flex justify-center lg:justify-end w-full mt-space-m lg:mt-0 lg:mb-space-l"
+        >
+          <a
+            href="#oferta"
+            class="inline-flex items-center justify-center gap-3 w-[205px] h-[45px] bg-primary text-[14px] font-medium uppercase tracking-wider leading-none text-white hover:bg-secondary transition-colors duration-300 ease-out cursor-pointer whitespace-nowrap shadow-sm"
+          >
+            <span>ZOBACZ OFERTĘ</span>
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+             aria-hidden="true">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- 3. Statystyki: wycentrowane względem siebie i rozciągnięte na pełną szerokość -->
+        <div
+          class="order-2 lg:order-3 grid grid-cols-3 gap-space-s pt-space-xs w-full items-start border-t border-neutral-100 lg:border-none"
+        >
+          <!-- Stat 1: 1 000 000+ -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="font-heading text-step-1 font-bold text-body tracking-tight leading-none min-h-[50px] flex items-center justify-center"
+            >
+              <span><span class="text-primary">1 000</span> 000+</span>
+            </div>
+            <p class="text-step-0 text-body/80 mt-2 font-normal leading-snug">
+              kartonów rocznie
+            </p>
+          </div>
+
+          <!-- Stat 2: Zegar 50x50 -->
+          <div class="flex flex-col items-center text-center">
+            <div class="min-h-[50px] flex items-center justify-center">
+              <svg
+                class="w-[50px] h-[50px] text-primary stroke-[2.2]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+               aria-hidden="true">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 7v5l3 3"></path>
+              </svg>
+            </div>
+            <p class="text-step-0 text-body/80 mt-2 font-normal leading-snug">
+              Szybki czas realizacji
+            </p>
+          </div>
+
+          <!-- Stat 3: 3x -->
+          <div class="flex flex-col items-center text-center">
+            <div
+              class="font-heading text-step-1 font-bold text-body tracking-tight leading-none min-h-[50px] flex items-center justify-center"
+            >
+              <span><span class="text-primary">3</span>x</span>
+            </div>
+            <p class="text-step-0 text-body/80 mt-2 font-normal leading-snug">
+              kontrola jakości
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRAWA KOLUMNA: Obrazek -->
+      <div class="w-full h-full min-h-[400px] flex">
+        <div
+          class="relative w-full h-full bg-[#f0f1f2] overflow-hidden flex items-center justify-center"
+        >
+          <svg
+            viewBox="0 0 700 550"
+            class="w-full h-full object-cover"
+            fill="none"
+            preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg"
+           aria-hidden="true">
+            <path
+              d="M-50 340 Q350 290 750 380 L750 600 L-50 600 Z"
+              fill="#e2e4e6"></path>
+            <path
+              d="M-50 420 Q350 370 750 460 L750 600 L-50 600 Z"
+              fill="#d4d7da"></path>
+            <path
+              d="M-50 340 Q350 290 750 380"
+              stroke="#bcc1c6"
+              stroke-width="3"></path>
+
+            <g opacity="0.6">
+              <rect
+                x="70"
+                y="320"
+                width="160"
+                height="90"
+                fill="#fcfcfc"
+                stroke="#cfd3d8"
+                stroke-width="2"></rect>
+              <path
+                d="M230 340 L270 340 L280 375 L280 410 L230 410 Z"
+                fill="#e8eaed"></path>
+              <rect x="235" y="348" width="30" height="22" fill="#ffffff"
+              ></rect>
+              <circle cx="110" cy="415" r="14" fill="#70757a"></circle>
+              <circle cx="190" cy="415" r="14" fill="#70757a"></circle>
+              <circle cx="255" cy="415" r="14" fill="#70757a"></circle>
+            </g>
+
+            <g>
+              <rect x="280" y="290" width="280" height="135" fill="#e72120"
+              ></rect>
+              <rect x="280" y="290" width="280" height="15" fill="#f04b4a"
+              ></rect>
+
+              <path
+                d="M560 325 L620 325 L645 375 L645 425 L560 425 Z"
+                fill="#d2d7dc"></path>
+              <polygon
+                points="568,335 612,335 628,372 568,372"
+                fill="#edf2f7"
+                stroke="#b8bec5"
+                stroke-width="1.5"></polygon>
+              <rect x="635" y="405" width="15" height="18" fill="#a0a6ad"
+              ></rect>
+
+              <circle cx="350" cy="435" r="24" fill="#202124"></circle>
+              <circle cx="350" cy="435" r="11" fill="#5f6368"></circle>
+
+              <circle cx="500" cy="435" r="24" fill="#202124"></circle>
+              <circle cx="500" cy="435" r="11" fill="#5f6368"></circle>
+
+              <circle cx="615" cy="435" r="22" fill="#202124"></circle>
+              <circle cx="615" cy="435" r="10" fill="#5f6368"></circle>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

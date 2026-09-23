@@ -1,0 +1,70 @@
+---
+const certificates = [
+  {
+    badge: "FSC®",
+    sub: null,
+    caption: "ZRÓWNOWAŻONE DREWNO",
+  },
+  {
+    badge: "ISO",
+    sub: "9001",
+    caption: "ZARZĄDZANIE JAKOŚCIĄ",
+  },
+  {
+    badge: "ISO",
+    sub: "14001",
+    caption: "ZARZĄDZANIE ŚRODOWISKOWE",
+  },
+  {
+    badge: "BRC",
+    sub: null,
+    caption: "BEZPIECZEŃSTWO OPAKOWAŃ",
+  },
+  {
+    badge: "100%",
+    sub: "PL",
+    caption: "PRODUKCJA KRAJOWA",
+  },
+];
+---
+
+<!-- Sekcja rozciągnięta na 100% szerokości z beżowym tłem kartonowym -->
+<section id="certyfikaty" class="w-full bg-[#f6ede3] py-space-xl-2xl">
+  <div class="site-wrapper pt-[var(--spacing-space-m-xl)] pb-[var(--spacing-space-m-xl)]">
+    <!-- Nagłówek sekcji -->
+    <div class="mb-space-xl-2xl">
+      <p class="font-mono text-step--1 font-medium tracking-[0.18em] text-primary uppercase mb-space-2xs">
+        CERTYFIKATY
+      </p>
+      <h2 class="font-heading text-step-3 font-bold tracking-tight text-body leading-[1.12]">
+        Produkcja, którą <span class="text-primary">można</span> zweryfikować.
+      </h2>
+    </div>
+
+    <!-- Siatka 5 certyfikatów: 2 kolumny na mobile, 5 w jednym równym rzędzie na desktopie -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-space-m gap-x-space-s items-start pt-[var(--spacing-space-m-xl)]">
+      {
+        certificates.map((cert) => (
+          <div class="flex flex-col items-center text-center group">
+            <!-- Okrągły / owalny stempel techniczny -->
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full border border-neutral-400/60 bg-white/40 flex flex-col items-center justify-center mb-space-xs transition-transform duration-300 ease-out group-hover:scale-105 shadow-2xs">
+              <span class="font-heading font-semibold text-step-0 text-body tracking-tight leading-none">
+                {cert.badge}
+              </span>
+              {cert.sub && (
+                <span class="font-mono text-[11px] sm:text-[12px] font-medium text-neutral-600 tracking-wider mt-1 leading-none">
+                  {cert.sub}
+                </span>
+              )}
+            </div>
+
+            <!-- Podpis techniczny w uppercase -->
+            <p class="font-mono text-[11px] sm:text-[12px] text-neutral-600 font-medium tracking-wider uppercase max-w-[150px] leading-tight">
+              {cert.caption}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

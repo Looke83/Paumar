@@ -1,0 +1,183 @@
+---
+import { Image } from "astro:assets";
+import logoPaumar from "../assets/logo.jpg";
+
+const offerLinks = [
+  { part1: "KARTONY ", part2: "CAŁOROCZNE", href: "#oferta" },
+  { part1: "KARTONY ", part2: "ŚWIĄTECZNE", href: "#oferta" },
+  { part1: "KARTONY ", part2: "DLA DZIECI", href: "#oferta" },
+];
+---
+
+<header class="z-50 w-full border-b border-neutral-200/80 bg-white">
+  <!-- Kontener 1400px bez bocznych paddingów -->
+  <div class="site-wrapper h-20 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center">
+      <Image
+        src={logoPaumar}
+        alt="PAUMAR Producent Opakowań"
+        class="h-11 w-auto object-contain"
+        loading="eager"
+      />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav
+      class="hidden md:flex items-center gap-8 text-step-0 font-medium uppercase tracking-wider leading-[30.7px] text-body"
+    >
+      <!-- Dropdown Oferta -->
+      <div class="relative group">
+        <button
+          class="flex items-center gap-1.5 text-body hover:text-secondary transition-colors duration-300 ease-out py-2 focus:outline-none cursor-pointer uppercase font-medium leading-[30.7px]"
+        >
+          <span>Nasza oferta</span>
+          <svg
+            class="w-4 h-4 text-body/60 group-hover:text-secondary transition-transform duration-300 ease-out group-hover:rotate-180"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+           aria-hidden="true">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+
+        <!-- Dropdown kontener -->
+        <div
+          class="absolute left-0 mt-0 w-72 bg-white border border-neutral-200 shadow-xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 ease-out py-1"
+        >
+          {
+            offerLinks.map((item, index) => (
+              <a
+                href={item.href}
+                class={`group/item block px-5 py-3 hover:bg-neutral-50 transition-colors duration-200 ease-out text-step-0 uppercase tracking-wider font-normal ${
+                  index !== offerLinks.length - 1
+                    ? "border-b border-neutral-200 border-dashed"
+                    : ""
+                }`}
+              >
+                <span class="text-body group-hover/item:text-secondary transition-colors duration-200 ease-out">
+                  {item.part1}
+                </span>
+                <span class="text-primary">{item.part2}</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <a
+        href="#rozmiary"
+        class="text-body hover:text-secondary transition-colors duration-300 ease-out"
+        >Rozmiary kartonów</a
+      >
+      <a
+        href="#certyfikaty"
+        class="text-body hover:text-secondary transition-colors duration-300 ease-out"
+        >Certyfikaty</a
+      >
+      <a
+        href="/kontakt"
+        class="text-body hover:text-secondary transition-colors duration-300 ease-out"
+        >Kontakt</a
+      >
+    </nav>
+
+    <!-- Right Action Button: prostokąt 181x45 -->
+    <div class="hidden md:flex items-center">
+      <a
+        href="#wycena"
+        class="inline-flex items-center justify-center w-[181px] h-[45px] bg-body text-[14px] font-medium uppercase tracking-wider leading-none text-white hover:bg-primary transition-colors duration-300 ease-out cursor-pointer whitespace-nowrap"
+      >
+        Zapytaj o wycenę
+      </a>
+    </div>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 text-body hover:text-secondary focus:outline-none cursor-pointer pr-4"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Otwórz menu nawigacji"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+       aria-hidden="true">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu Dropdown -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-b border-neutral-200 bg-white px-4 pt-3 pb-6 space-y-3"
+  >
+    <div
+      class="font-semibold text-neutral-400 text-xs uppercase tracking-wider px-2"
+    >
+      Oferta
+    </div>
+    {
+      offerLinks.map((item) => (
+        <a
+          href={item.href}
+          class="group/mitem block px-3 py-2 text-step-0 uppercase tracking-wider font-normal transition-colors duration-200 ease-out"
+        >
+          <span class="text-body group-hover/mitem:text-secondary transition-colors duration-200 ease-out">
+            {item.part1}
+          </span>
+          <span class="text-primary">{item.part2}</span>
+        </a>
+      ))
+    }
+    <div class="border-t border-neutral-100 pt-3 space-y-2">
+      <a
+        href="#rozmiary"
+        class="block px-3 py-2 text-body hover:text-secondary hover:bg-neutral-100 text-step-0 uppercase tracking-wider font-normal transition-colors duration-200 ease-out"
+        >Rozmiary kartonów</a
+      >
+      <a
+        href="#certyfikaty"
+        class="block px-3 py-2 text-body hover:text-secondary hover:bg-neutral-100 text-step-0 uppercase tracking-wider font-normal transition-colors duration-200 ease-out"
+        >Certyfikaty</a
+      >
+      <a
+        href="/kontakt"
+        class="block px-3 py-2 text-body hover:text-secondary hover:bg-neutral-100 text-step-0 uppercase tracking-wider font-normal transition-colors duration-200 ease-out"
+        >Kontakt</a
+      >
+    </div>
+    <div class="pt-3">
+      <a
+        href="#wycena"
+        class="w-full h-[45px] inline-flex items-center justify-center bg-body text-[14px] font-medium uppercase tracking-wider leading-none text-white hover:bg-primary transition-colors duration-300 ease-out"
+      >
+        Zapytaj o wycenę
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  }
+</script>

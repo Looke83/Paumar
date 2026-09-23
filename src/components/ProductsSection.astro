@@ -1,0 +1,58 @@
+---
+import ProductCard from "./ProductCard.astro";
+
+const products = [
+  {
+    dimensions: "H120 · W300 · D200",
+    titleBlack: "Kartony",
+    titleRed: "całoroczne",
+    description:
+      "Uniwersalne wzory i stonowana kolorystyka - sprawdzają się przez cały rok, w każdej branży.",
+    href: "#caloroczne",
+  },
+  {
+    dimensions: "H120 · W300 · D200",
+    titleBlack: "Kartony",
+    titleRed: "całoroczne",
+    description:
+      "Uniwersalne wzory i stonowana kolorystyka - sprawdzają się przez cały rok, w każdej branży.",
+    href: "#caloroczne",
+  },
+  {
+    dimensions: "H120 · W300 · D200",
+    titleBlack: "Kartony",
+    titleRed: "całoroczne",
+    description:
+      "Uniwersalne wzory i stonowana kolorystyka - sprawdzają się przez cały rok, w każdej branży.",
+    href: "#caloroczne",
+  },
+];
+---
+
+<section id="oferta" class="w-full">
+  <div class="site-wrapper">
+    <!-- Tytuł H2 z fluid marginem -->
+    <div class="mb-space-l">
+      <h2 class="font-heading text-step-3 font-bold tracking-tight text-body">
+        Nasze <span class="text-primary">kolekcje</span>
+      </h2>
+    </div>
+
+    <!-- Siatka 3 kolumn: fluid gap-space-s-m, karty max-w-[448px] -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-s-m justify-items-center lg:justify-between items-start"
+    >
+      {
+        products.map((item) => (
+          <ProductCard
+            dimensions={item.dimensions}
+            titleBlack={item.titleBlack}
+            titleRed={item.titleRed}
+            description={item.description}
+            href={item.href}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

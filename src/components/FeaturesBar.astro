@@ -1,0 +1,30 @@
+---
+const features = [
+  "Tektura z certyfikatem FSC®",
+  "Druk offsetowy i flexo",
+  "Własne biuro projektowe",
+  "Wysyłka na terenie całej Polski",
+];
+---
+
+<section class="w-full">
+  <!-- Kontener ograniczający do 1400px -->
+  <div class="site-wrapper">
+    <!-- Ramki kropkowane góra / dół w obrębie 1400px -->
+    <div class="border-y border-dotted border-neutral-300 py-6 sm:py-7">
+      <ul
+        class="flex flex-wrap items-center justify-between gap-y-4 gap-x-6 list-none m-0 p-0"
+      >
+        {
+          features.map((item) => (
+            <li class="flex items-center gap-2.5 text-body text-[15px] sm:text-[16px] font-normal tracking-tight">
+              {/* Czerwony kwadracik */}
+              <span class="w-2 h-2 bg-primary shrink-0" aria-hidden="true" />
+              <span>{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

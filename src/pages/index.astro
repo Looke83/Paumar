@@ -1,17 +1,27 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import FeaturesBar from "../components/FeaturesBar.astro";
+import ProductsSection from "../components/ProductsSection.astro";
+import ProcessFeatures from "../components/ProcessFeatures.astro";
+import WhyUs from "../components/WhyUs.astro";
+import Certificates from "../components/Certificates.astro";
+import CtaBanner from "../components/CtaBanner.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <Header />
+  <!-- Jeden spójny pionowy odstęp między wszystkimi sekcjami -->
+  <main class="w-full flex flex-col gap-section-gap">
+    <Hero />
+    <FeaturesBar />
+    <ProductsSection />
+    <ProcessFeatures />
+    <WhyUs />
+    <Certificates />
+    <CtaBanner />
+  </main>
+  <Footer />
+</Layout>

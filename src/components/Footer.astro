@@ -1,0 +1,120 @@
+---
+
+---
+
+<footer
+  class="relative w-full bg-[#121212] text-neutral-300 border-t-2 border-primary overflow-hidden"
+>
+  <!-- Subtelne tło w techniczne linie pod kątem 135deg (efekt tektury / linii kreślarskich) -->
+  <div
+    class="absolute inset-0 pointer-events-none opacity-60"
+    style="background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.09) 0px, rgba(255, 255, 255, 0.09) 1px, transparent 1px, transparent 12px);"
+  >
+  </div>
+
+  <!-- Główna zawartość stopki (wzniesiona nad tło za pomocą relative z-10) -->
+  <div
+    class="relative z-10 site-wrapper pt-[var(--spacing-space-m-xl)] pb-[var(--spacing-space-s-m)]"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-y-10 gap-x-12 items-start">
+      <!-- Kolumna 1: Brand & Misja -->
+      <div class="flex flex-col items-start">
+        <a
+          href="/"
+          class="inline-block font-heading text-step-2 font-black tracking-tight text-white mb-space-s"
+        >
+          PAU<span class="text-primary">MAR</span>
+        </a>
+        <p
+          class="text-step-0 text-neutral-400 font-normal leading-relaxed max-w-sm"
+        >
+          Producent kartonów ozdobnych. Projektujemy i pakujemy z troską o
+          detal.
+        </p>
+      </div>
+
+      <!-- Kolumna 2: Kontakt & Social -->
+      <div class="flex flex-col items-start">
+        <h3
+          class="font-mono text-step-1 font-medium tracking-[0.16em] !text-white uppercase mb-space-s"
+        >
+          KONTAKT
+        </h3>
+        <div class="flex flex-col gap-2 text-step-0 font-normal mb-space-s">
+          <a
+            href="tel:+48111222333"
+            class="text-neutral-300 hover:text-white transition-colors duration-200 ease-out"
+          >
+            tel.: +48 111 222 333
+          </a>
+          <a
+            href="mailto:biuro@paumar.pl"
+            class="text-neutral-300 hover:text-white transition-colors duration-200 ease-out"
+          >
+            biuro@paumar.pl
+          </a>
+        </div>
+
+        <!-- Ikona Facebook -->
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-8 h-8 rounded-full border border-white/40 text-white hover:border-primary hover:text-primary transition-colors duration-300 ease-out flex items-center justify-center cursor-pointer"
+          aria-label="Facebook"
+        >
+          <svg
+            class="w-4.5 h-4.5 fill-current"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Kolumna 3: Dane adresowe z semantyką i geo-linkiem -->
+      <div class="flex flex-col items-start">
+        <p
+          class="font-mono text-step--1 font-medium tracking-[0.16em] !text-white uppercase mb-space-s"
+        >
+          ADRES
+        </p>
+        <address
+          class="not-italic text-step-0 text-neutral-300 font-normal leading-relaxed flex flex-col gap-1"
+        >
+          <span class="font-medium text-white">PAUMAR sp. z o.o.</span>
+          <a
+            href="https://maps.google.com/?q=PAUMAR+ul.+Poranna+11,+62-064+Plewiska"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-primary transition-colors duration-200 ease-out"
+          >
+            ul. Poranna 11<br />
+            62-064 Plewiska, Polska
+          </a>
+        </address>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pasek dolny (Sub-footer) -->
+  <div class="relative z-10 border-t border-neutral-800/80">
+    <div
+      class="site-wrapper py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-step--1 text-neutral-500 font-normal"
+    >
+      <div>© 2026 PAUMAR. Wszystkie prawa zastrzeżone</div>
+      <div>
+        Projekt i wykonanie <a
+          href="https://way-it.pl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sky-500 hover:text-sky-400 transition-colors duration-200 ease-out font-medium"
+          >way-IT Łukasz Kufel</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
