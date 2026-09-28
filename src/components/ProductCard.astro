@@ -6,6 +6,7 @@ interface Props {
   dimensions?: string;
   titleBlack: string;
   titleRed: string;
+  titleBlack2?: string;
   description: string;
   imageSrc?: ImageMetadata;
   href?: string;
@@ -15,6 +16,7 @@ const {
   dimensions = "H120 · W300 · D200",
   titleBlack,
   titleRed,
+  titleBlack2,
   description,
   imageSrc = placeholderImg,
   href = "#",
@@ -116,9 +118,13 @@ const {
 
     <!-- Tytuł: fluid font text-step-1 z fluid marginem mb-space-2xs -->
     <h3
-      class="font-heading text-step-1 font-bold tracking-tight text-body mb-space-2xs"
+      class="font-heading text-step-1 font-bold tracking-tight text-body mb-space-2xs min-h-[5rem] flex flex-col justify-start"
     >
-      {titleBlack}{" "}<span class="text-primary">{titleRed}</span>
+      <span>
+        {titleBlack}{" "}<span class="text-primary">{titleRed}</span>{
+          titleBlack2 ? ` ${titleBlack2}` : ""
+        }
+      </span>
     </h3>
 
     <!-- Opis: fluid font text-step-0 (16px do 18px) -->
@@ -130,7 +136,7 @@ const {
   <a href={href} class="absolute inset-0 z-20">
     <span
       class="sr-only focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
-      >Zobacz {titleBlack} {titleRed}</span
-    >
+      >Zobacz {titleBlack} {titleRed}
+    </span>
   </a>
 </div>

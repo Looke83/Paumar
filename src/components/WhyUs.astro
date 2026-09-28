@@ -1,22 +1,29 @@
 ---
+import { Image } from "astro:assets";
+
+import corrugationIcon from "../assets/svg/fale.svg";
+import clockIcon from "../assets/svg/zegar.svg";
+import checkIcon from "../assets/svg/lupa.svg";
+import officeIcon from "../assets/svg/monitor.svg";
+
 const pillars = [
   {
-    icon: "corrugation",
+    icon: corrugationIcon,
     title: "Tektura falista premium",
     desc: "Surowiec z certyfikatem FSC®, dobrany pod wagę i kształt produktu.",
   },
   {
-    icon: "clock",
+    icon: clockIcon,
     title: "Szybka realizacja",
     desc: "Od projektu do produkcji - oferujemy błyskawiczną realizację zamówienia",
   },
   {
-    icon: "check",
+    icon: checkIcon,
     title: "Kontrola jakości 3x",
     desc: "Każda partia sprawdzana na etapie cięcia, druku i pakowania.",
   },
   {
-    icon: "office",
+    icon: officeIcon,
     title: "Biuro projektowe",
     desc: "Od pomysłu po dieline — projektujemy karton dopasowany do produktu.",
   },
@@ -25,42 +32,35 @@ const pillars = [
 
 <section class="w-full">
   <div class="site-wrapper">
-    
-   <!-- 1. TECHNICZNA LINIA CIĘCIA Z NOŻYCZKAMI -->
+    <!-- 1. TECHNICZNA LINIA CIĘCIA Z NOŻYCZKAMI -->
     <div 
       class="relative w-full -mt-[calc(var(--spacing-section-gap)/2)] mb-[calc(var(--spacing-section-gap)/2)] select-none pointer-events-none"
     >
       <!-- Linia kropkowana na pełną szerokość -->
       <div class="w-full border-b border-dotted border-neutral-300"></div>
 
-      <!-- Nożyczki LEWE: oczka po lewej, skrzyżowane ostrza tną w prawo -->
+      <!-- Nożyczki LEWE -->
       <span class="absolute left-6 sm:left-12 top-1/2 -translate-y-1/2 bg-white px-2 text-neutral-400">
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <!-- Oczka -->
           <circle cx="5" cy="7" r="3"></circle>
           <circle cx="5" cy="17" r="3"></circle>
-          <!-- Ramię z lewej góry przechodzące przez środek w prawe dolne ostrze -->
           <line x1="7.5" y1="8.5" x2="21" y2="17.5"></line>
-          <!-- Ramię z lewego dołu przechodzące przez środek w prawe górne ostrze -->
           <line x1="7.5" y1="15.5" x2="21" y2="6.5"></line>
         </svg>
       </span>
 
-      <!-- Nożyczki PRAWE: oczka po lewej, skrzyżowane ostrza tną w prawo -->
+      <!-- Nożyczki PRAWE -->
       <span class="absolute right-6 sm:right-12 top-1/2 -translate-y-1/2 bg-white px-2 text-neutral-400">
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <!-- Oczka -->
           <circle cx="5" cy="7" r="3"></circle>
           <circle cx="5" cy="17" r="3"></circle>
-          <!-- Ramię z lewej góry przechodzące przez środek w prawe dolne ostrze -->
           <line x1="7.5" y1="8.5" x2="21" y2="17.5"></line>
-          <!-- Ramię z lewego dołu przechodzące przez środek w prawe górne ostrze -->
           <line x1="7.5" y1="15.5" x2="21" y2="6.5"></line>
         </svg>
       </span>
     </div>
     
-<!-- 2. NAGŁÓWEK SEKCJI I PRAWA NOTATKA -->
+    <!-- 2. NAGŁÓWEK SEKCJI I PRAWA NOTATKA -->
     <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-s mb-space-l">
       <!-- Lewa strona: nadtytuł + H2 -->
       <div class="max-w-3xl">
@@ -87,35 +87,13 @@ const pillars = [
           <div class="border-r border-b border-neutral-300 p-space-s-m flex flex-col justify-between min-h-[220px] bg-white">
             
             <!-- Górna ikona -->
-            <div class="mb-space-m text-primary">
-              {item.icon === "corrugation" && (
-                <svg class="w-7 h-7 stroke-[1.8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 6h18v12H3z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 13c3-4 6 4 9 0s6 4 9 0" />
-                </svg>
-              )}
-
-              {item.icon === "clock" && (
-                <svg class="w-7 h-7 stroke-[1.8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <circle cx="12" cy="12" r="9" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2" />
-                </svg>
-              )}
-
-              {item.icon === "check" && (
-                <svg class="w-7 h-7 stroke-[1.8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="1" stroke-linecap="round" stroke-linejoin="round" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 12l3 3 5-6" />
-                </svg>
-              )}
-
-              {item.icon === "office" && (
-                <svg class="w-7 h-7 stroke-[1.8]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 9h1m4 0h1m-6 4h1m4 0h1m-4 8v-4h2v4" />
-                </svg>
-              )}
+            <div class="mb-space-m flex items-center">
+              <Image 
+                src={item.icon} 
+                alt="" 
+                aria-hidden="true" 
+                class="w-14 h-14 object-contain" 
+              />
             </div>
 
             <!-- Teksty: Tytuł + Opis -->

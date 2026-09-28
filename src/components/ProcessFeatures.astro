@@ -1,37 +1,46 @@
 ---
+import { Image } from "astro:assets";
+
+import zarowkaIcon from "../assets/svg/zarowka.svg";
+import olowekIcon from "../assets/svg/olowek.svg";
+import diamentIcon from "../assets/svg/diament.svg";
+import paczkaIcon from "../assets/svg/paczka.svg";
+import samochodIcon from "../assets/svg/samochod.svg";
+import serceIcon from "../assets/svg/serce.svg";
+
 const steps = [
   {
-    icon: "bulb",
+    icon: zarowkaIcon,
     titleLine1: "POMYSŁ",
     titleLine2: "I PROJEKT",
     desc: "Tworzymy indywidualne wzory dopasowane do Twoich potrzeb.",
   },
   {
-    icon: "ruler",
+    icon: olowekIcon,
     titleLine1: "DOBÓR",
     titleLine2: "ROZMIARÓW",
     desc: "Projektujemy kartony w idealnym rozmiarze dla Ciebie.",
   },
   {
-    icon: "pencil",
+    icon: diamentIcon,
     titleLine1: "PRODUKCJA",
     titleLine2: "Z DBAŁOŚCIĄ O DETAL",
     desc: "Nowoczesne technologie i kontrola jakości na każdym etapie produkcji.",
   },
   {
-    icon: "box",
+    icon: paczkaIcon,
     titleLine1: "PAKOWANIE",
     titleLine2: "",
     desc: "Starannie pakujemy każdy karton, aby dotarł do Ciebie w idealnym stanie.",
   },
   {
-    icon: "truck",
+    icon: samochodIcon,
     titleLine1: "WYSYŁKA",
     titleLine2: "DO KLIENTA",
     desc: "Szybka i bezpieczna dostawa pod wskazany adres.",
   },
   {
-    icon: "heart",
+    icon: serceIcon,
     titleLine1: "PASJA",
     titleLine2: "DO PIĘKNYCH RZECZY",
     desc: "Tworzymy produkty, które zachwycają swoją jakością i wyglądem.",
@@ -41,8 +50,7 @@ const steps = [
 
 <section class="w-full">
   <div class="site-wrapper">
-    <!-- Wyraźny, duży margines dolny z odwołaniem fluid: mb-[var(--spacing-space-2xl-3xl)] -->
- <div class="mb-space-l">
+    <div class="mb-space-l">
       <h2 class="font-heading text-step-3 font-bold tracking-tight text-body">
         Kartony <span class="text-primary">ozdobne całoroczne</span>
       </h2>
@@ -53,55 +61,23 @@ const steps = [
       {
         steps.map((step) => (
           <div class="flex flex-col items-center text-center px-space-xs sm:px-space-s py-space-s">
-            <!-- Ikona 52px -->
-            <div class="h-[52px] flex items-center justify-center text-primary mb-space-xs">
-              {step.icon === "bulb" && (
-                <svg class="w-8 h-8 stroke-[1.8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              )}
-
-              {step.icon === "ruler" && (
-                <svg class="w-8 h-8 stroke-[1.8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 20L20 4M7 5l2 2m-4 4l2 2m-4 4l2 2m5 1l2 2m2-6l2 2m2-6l2 2" />
-                </svg>
-              )}
-
-              {step.icon === "pencil" && (
-                <svg class="w-8 h-8 stroke-[1.8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-              )}
-
-              {step.icon === "box" && (
-                <svg class="w-8 h-8 stroke-[1.8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                </svg>
-              )}
-
-              {step.icon === "truck" && (
-                <svg class="w-8 h-8 stroke-[1.8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <rect x="1" y="5" width="15" height="11" rx="1" stroke-linecap="round" stroke-linejoin="round" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M16 8h4l3 4v4h-7V8z" />
-                  <circle cx="5.5" cy="18.5" r="2.5" />
-                  <circle cx="18.5" cy="18.5" r="2.5" />
-                </svg>
-              )}
-
-              {step.icon === "heart" && (
-                <svg class="w-8 h-8 stroke-[1.8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              )}
+            <!-- Kontener ikony -->
+            <div class="h-[52px] flex items-center justify-center mb-space-xs">
+              <Image 
+                src={step.icon} 
+                alt="" 
+                aria-hidden="true" 
+                class="w-14 h-14 object-contain" 
+              />
             </div>
 
             <!-- Tytuł kroku -->
             <div class="min-h-[44px] flex flex-col justify-center mb-space-2xs">
-              <h4 class="font-heading text-step-0 font-bold tracking-tight text-body uppercase leading-tight">
+              <h3 class="font-heading text-step-0 font-bold tracking-tight text-body uppercase leading-tight">
                 {step.titleLine1}
                 {step.titleLine2 && <br />}
                 {step.titleLine2}
-              </h4>
+              </h3>
             </div>
 
             <!-- Opis -->
