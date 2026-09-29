@@ -1,0 +1,179 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import placeholderBox from "../assets/placeholder.png";
+import CTABanner from "../components/CTABanner.astro";
+
+const rectangularBoxes = [
+  {
+    name: "Rozmiar A4:",
+    dimensions: "33 × 23 × 17,5 cm",
+    desc: "szer. × gł. × wys.",
+  },
+  {
+    name: "rozmiar MAŁY:",
+    dimensions: "37 × 27 × 18 cm",
+    desc: "szer. × gł. × wys.",
+  },
+  {
+    name: "rozmiar ŚREDNI:",
+    dimensions: "47 × 31 × 21 cm",
+    desc: "szer. × gł. × wys.",
+  },
+  {
+    name: "rozmiar MAXI:",
+    dimensions: "47 × 31 × 32 cm",
+    desc: "szer. × gł. × wys.",
+  },
+];
+
+const squareBoxes = [
+  {
+    name: "Rozmiar KWADRAT L:",
+    dimensions: "26 × 26 × 24 cm",
+    desc: "szer. × gł. × wys.",
+  },
+  {
+    name: "rozmiar KWADRAT XL:",
+    dimensions: "33 × 34 × 32 cm",
+    desc: "szer. × gł. × wys.",
+  },
+];
+---
+
+<Layout title="Rozmiary Kartonów | PAUMAR">
+  <Header />
+
+  <main class="w-full pt-12 md:pt-16 pb-0">
+    <div class="site-wrapper">
+      <!-- 1. Nagłówek podstrony -->
+      <div class="mb-12 md:mb-16">
+        <h1
+          class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-body mb-6"
+        >
+          Rozmiary <span class="text-primary">Kartonów</span>
+        </h1>
+        <p class="text-step-0 text-body/80 font-normal leading-relaxed">
+          Wszystkie nasze kartony ozdobne produkujemy z zachowaniem najwyższej
+          precyzji wymiarowej. Poniżej prezentujemy zestawienie dostępnych
+          wymiarów standardowych w podziale na warianty prostokątne i
+          kwadratowe.
+        </p>
+      </div>
+
+      <!-- 2. Sekcja: Kartony prostokątne -->
+      <section class="w-full mb-16 md:mb-24">
+        <h2
+          class="text-xl sm:text-2xl font-normal tracking-wide text-body mb-8"
+        >
+          <span class="text-primary font-medium">Kartony</span> prostokątne
+        </h2>
+
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch"
+        >
+          <!-- Lewa kolumna: grafika definiuje wysokość wiersza -->
+          <div class="lg:col-span-6 flex justify-center items-center w-full">
+            <div class="w-full max-w-md flex items-center justify-center">
+              <img
+                src={placeholderBox.src}
+                alt="Wymiary kartonów prostokątnych"
+                class="w-full h-auto max-h-[280px] object-contain block"
+                loading="eager"
+              />
+            </div>
+          </div>
+
+          <!-- Prawa kolumna: wyśrodkowana w pionie (justify-center) -->
+          <div class="lg:col-span-6 w-full flex flex-col justify-center">
+            <div class="inline-block">
+              <dl
+                class="space-y-2 text-[14px] sm:text-[15px] font-mono leading-relaxed text-body"
+              >
+                {
+                  rectangularBoxes.map((box) => (
+                    <div class="flex flex-wrap sm:flex-nowrap gap-x-4 items-baseline">
+                      <dt class="w-36 shrink-0 font-medium text-body/90">
+                        {box.name}
+                      </dt>
+                      <dd class="flex items-center gap-2">
+                        <span class="font-bold tracking-tight text-body">
+                          {box.dimensions}
+                        </span>
+                        <span class="text-neutral-400 font-sans text-xs">
+                          | {box.desc}
+                        </span>
+                      </dd>
+                    </div>
+                  ))
+                }
+              </dl>
+              <div class="w-16 h-0.5 bg-primary mt-4"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Sekcja: Kartony kwadratowe -->
+      <section class="w-full mb-28 md:mb-64">
+        <h2
+          class="text-xl sm:text-2xl font-normal tracking-wide text-body mb-8"
+        >
+          <span class="text-primary font-medium">Kartony</span> kwadratowe
+        </h2>
+
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch"
+        >
+          <!-- Lewa kolumna: grafika definiuje wysokość wiersza -->
+          <div class="lg:col-span-6 flex justify-center items-center w-full">
+            <div class="w-full max-w-md flex items-center justify-center">
+              <img
+                src={placeholderBox.src}
+                alt="Wymiary kartonów kwadratowych"
+                class="w-full h-auto max-h-[280px] object-contain block"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Prawa kolumna: wyśrodkowana w pionie (justify-center) -->
+          <div class="lg:col-span-6 w-full flex flex-col justify-center">
+            <div class="inline-block">
+              <dl
+                class="space-y-2 text-[14px] sm:text-[15px] font-mono leading-relaxed text-body"
+              >
+                {
+                  squareBoxes.map((box) => (
+                    <div class="flex flex-wrap sm:flex-nowrap gap-x-4 items-baseline">
+                      <dt class="w-44 shrink-0 font-medium text-body/90">
+                        {box.name}
+                      </dt>
+                      <dd class="flex items-center gap-2">
+                        <span class="font-bold tracking-tight text-body">
+                          {box.dimensions}
+                        </span>
+                        <span class="text-neutral-400 font-sans text-xs">
+                          | {box.desc}
+                        </span>
+                      </dd>
+                    </div>
+                  ))
+                }
+              </dl>
+              <div class="w-16 h-0.5 bg-primary mt-4"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 4. Baner CTA w osobnym bloku -->
+    <div class="w-full clear-both pt-8">
+      <CTABanner hasNegativeMargin={false} />
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

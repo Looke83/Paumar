@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import logoPaumar from "../assets/logo.jpg";
+import logoPaumar from "../assets/svg/logo.svg";
 
 const offerLinks = [
   { part1: "KARTONY ", part2: "CAŁOROCZNE", href: "#oferta" },
@@ -17,7 +17,7 @@ const offerLinks = [
       <Image
         src={logoPaumar}
         alt="PAUMAR Producent Opakowań"
-        class="h-11 w-auto object-contain"
+        class="h-14 w-auto object-contain"
         loading="eager"
       />
     </a>
@@ -72,12 +72,12 @@ const offerLinks = [
       </div>
 
       <a
-        href="#rozmiary"
+        href="/rozmiary-kartonow"
         class="text-body hover:text-secondary transition-colors duration-300 ease-out"
         >Rozmiary kartonów</a
       >
       <a
-        href="#certyfikaty"
+        href="/certyfikaty"
         class="text-body hover:text-secondary transition-colors duration-300 ease-out"
         >Certyfikaty</a
       >

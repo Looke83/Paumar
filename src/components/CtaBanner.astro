@@ -1,12 +1,19 @@
 ---
+interface Props {
+  hasNegativeMargin?: boolean;
+}
 
+const { hasNegativeMargin = true } = Astro.props;
 ---
 
 <section
   id="wycena"
-  class="w-full bg-primary text-white -mt-[var(--spacing-section-gap)]"
+  class:list={[
+    "w-full bg-primary text-white",
+    hasNegativeMargin && "-mt-[var(--spacing-section-gap)]",
+  ]}
 >
-  <!-- Sprawdzony wewnętrzny fluid padding na site-wrapper (taki jak w Certificates) -->
+  <!-- Sprawdzony wewnętrzny fluid padding na site-wrapper -->
   <div
     class="site-wrapper flex flex-col items-center text-center pt-[var(--spacing-space-xl-3xl)] pb-[var(--spacing-space-m-xl)]"
   >
