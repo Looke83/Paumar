@@ -37,7 +37,8 @@ const offerLinks = [
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-           aria-hidden="true">
+            aria-hidden="true"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -97,26 +98,26 @@ const offerLinks = [
       </a>
     </div>
 
-    <!-- Mobile Hamburger Toggle -->
+    <!-- Animowany przycisk Hamburger / Krzyżyk -->
     <button
       id="mobile-menu-btn"
-      class="md:hidden p-2 text-body hover:text-secondary focus:outline-none cursor-pointer pr-4"
+      class="group md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none cursor-pointer"
       aria-expanded="false"
       aria-controls="mobile-menu"
-      aria-label="Otwórz menu nawigacji"
+      aria-label="Przełącz menu nawigacji"
     >
-      <svg
-        class="w-6 h-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-       aria-hidden="true">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16m-7 6h7"></path>
-      </svg>
+      <!-- Górna linia: przy aktywnym obraca się o 45 stopni w dół -->
+      <span
+        class="hamburger-line w-6 h-0.5 bg-body rounded-full transition-all duration-300 ease-in-out origin-center"
+      ></span>
+      <!-- Środkowa linia: przy aktywnym zanika -->
+      <span
+        class="hamburger-line w-6 h-0.5 bg-body rounded-full transition-all duration-200 ease-in-out"
+      ></span>
+      <!-- Dolna linia: przy aktywnym obraca się o -45 stopni w górę -->
+      <span
+        class="hamburger-line w-6 h-0.5 bg-body rounded-full transition-all duration-300 ease-in-out origin-center"
+      ></span>
     </button>
   </div>
 
@@ -171,12 +172,31 @@ const offerLinks = [
   </div>
 </header>
 
+<style>
+  /* Efekt transformacji w X */
+  #mobile-menu-btn.is-active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobile-menu-btn.is-active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  #mobile-menu-btn.is-active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+</style>
+
 <script>
   const btn = document.getElementById("mobile-menu-btn");
   const menu = document.getElementById("mobile-menu");
 
   if (btn && menu) {
     btn.addEventListener("click", () => {
+      const isExpanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!isExpanded));
+      btn.classList.toggle("is-active");
       menu.classList.toggle("hidden");
     });
   }
