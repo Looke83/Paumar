@@ -1,125 +1,46 @@
 ---
-
+import ikonaZegar from "../assets/svg/zegar.svg";
 ---
 
 <section class="w-full pt-space-xl-3xl">
   <!-- Kontener 1400px -->
-  <div class="site-wrapper">
-    <!-- Zwężony odstęp (gap-space-s): kolumny są blisko siebie, teksty mają pełną swobodę -->
+  <div class="site-wrapper flex flex-col gap-y-12 lg:gap-y-16">
+    <!-- 1. GÓRNY WIERSZ: 2 kolumny (Tekst + Grafika) -->
     <div
-      class="grid grid-cols-1 lg:grid-cols-2 gap-space-s lg:gap-8 items-stretch w-full"
+      class="grid grid-cols-1 lg:grid-cols-2 gap-space-s lg:gap-12 items-center w-full"
     >
-      <!-- LEWA KOLUMNA: Treść -->
-      <div class="flex flex-col justify-between items-start text-left w-full">
-        <!-- 1. Teksty -->
-        <div class="order-1 w-full">
-          <!-- Nadtytuł w JetBrains Mono -->
-          <p
-            class="font-mono text-step--1 font-medium tracking-[0.18em] text-primary uppercase mb-space-xs"
-          >
-            PRODUCENT KARTONÓW OZDOBNYCH OD 2005
-          </p>
-
-          <!-- Nagłówek H1: dokładnie 2 linijki z miękkim łamaniem -->
-          <h1
-            class="font-heading text-step-4 font-bold text-body tracking-tight leading-[1.08] mb-space-s"
-          >
-            Opakowanie, które <br class="hidden sm:inline" />
-            <span class="text-primary">domyka</span> Twój produkt
-          </h1>
-
-          <!-- Lead paragraph: pełna szerokość kolumny, brak sztucznego max-w-xl -->
-          <p
-            class="text-step-0 text-body/90 font-normal leading-relaxed mb-space-m"
-          >
-            Projektujemy i produkujemy kartony ozdobne dla marek, które liczą
-            się z detalem — od pierwszego szkicu po paletę gotową do wysyłki. <strong
-              >Zaufaj nam.</strong
-            >
-          </p>
-        </div>
-
-        <!-- 2. Przycisk ZOBACZ OFERTĘ:
-             - na desktopie: dociągnięty idealnie do prawej krawędzi kolumny (w-full justify-end)
-             - na mobile: order-3, na środku -->
-        <div
-          class="order-3 lg:order-2 flex justify-center lg:justify-end w-full mt-space-m lg:mt-0 lg:mb-space-l"
+      <!-- LEWA KOLUMNA: Teksty -->
+      <div class="flex flex-col justify-center items-start text-left w-full">
+        <!-- Nadtytuł w JetBrains Mono -->
+        <p
+          class="font-mono text-step--1 font-medium tracking-[0.18em] text-primary uppercase mb-space-xs"
         >
-          <a
-            href="#oferta"
-            class="inline-flex items-center justify-center gap-3 w-[205px] h-[45px] bg-primary text-[14px] font-medium uppercase tracking-wider leading-none text-white hover:bg-secondary transition-colors duration-300 ease-out cursor-pointer whitespace-nowrap shadow-sm"
-          >
-            <span>ZOBACZ OFERTĘ</span>
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-             aria-hidden="true">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2.5"
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-          </a>
-        </div>
+          PRODUCENT KARTONÓW OZDOBNYCH OD 2005
+        </p>
 
-        <!-- 3. Statystyki: wycentrowane względem siebie i rozciągnięte na pełną szerokość -->
-        <div
-          class="order-2 lg:order-3 grid grid-cols-3 gap-space-s pt-space-xs w-full items-start border-t border-neutral-100 lg:border-none"
+        <!-- Nagłówek H1: dokładnie 2 linijki z miękkim łamaniem -->
+        <h1
+          class="font-heading text-step-4 font-bold text-body tracking-tight leading-[1.08] mb-space-s"
         >
-          <!-- Stat 1: 1 000 000+ -->
-          <div class="flex flex-col items-center text-center">
-            <div
-              class="font-heading text-step-1 font-bold text-body tracking-tight leading-none min-h-[50px] flex items-center justify-center"
-            >
-              <span><span class="text-primary">1 000</span> 000+</span>
-            </div>
-            <p class="text-step-0 text-body/80 mt-2 font-normal leading-snug">
-              kartonów rocznie
-            </p>
-          </div>
+          Opakowanie, które <br class="hidden sm:inline" />
+          <span class="text-primary">domyka</span> Twój produkt
+        </h1>
 
-          <!-- Stat 2: Zegar 50x50 -->
-          <div class="flex flex-col items-center text-center">
-            <div class="min-h-[50px] flex items-center justify-center">
-              <svg
-                class="w-[50px] h-[50px] text-primary stroke-[2.2]"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-               aria-hidden="true">
-                <circle cx="12" cy="12" r="9"></circle>
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 7v5l3 3"></path>
-              </svg>
-            </div>
-            <p class="text-step-0 text-body/80 mt-2 font-normal leading-snug">
-              Szybki czas realizacji
-            </p>
-          </div>
-
-          <!-- Stat 3: 3x -->
-          <div class="flex flex-col items-center text-center">
-            <div
-              class="font-heading text-step-1 font-bold text-body tracking-tight leading-none min-h-[50px] flex items-center justify-center"
-            >
-              <span><span class="text-primary">3</span>x</span>
-            </div>
-            <p class="text-step-0 text-body/80 mt-2 font-normal leading-snug">
-              kontrola jakości
-            </p>
-          </div>
-        </div>
+        <!-- Lead paragraph -->
+        <p
+          class="text-step-0 text-body/90 font-normal leading-relaxed max-w-xl"
+        >
+          Projektujemy i produkujemy kartony ozdobne dla marek, które liczą się
+          z detalem — od pierwszego szkicu po paletę gotową do wysyłki. <strong
+            >Zaufaj nam.</strong
+          >
+        </p>
       </div>
 
-      <!-- PRAWA KOLUMNA: Obrazek -->
-      <div class="w-full h-full min-h-[400px] flex">
+      <!-- PRAWA KOLUMNA: Obrazek / Placeholder -->
+      <div class="w-full h-full min-h-[360px] lg:min-h-[420px] flex">
         <div
-          class="relative w-full h-full bg-[#f0f1f2] overflow-hidden flex items-center justify-center"
+          class="relative w-full h-full bg-[#f0f1f2] overflow-hidden flex items-center justify-center rounded-sm"
         >
           <svg
             viewBox="0 0 700 550"
@@ -127,7 +48,8 @@
             fill="none"
             preserveAspectRatio="xMidYMid slice"
             xmlns="http://www.w3.org/2000/svg"
-           aria-hidden="true">
+            aria-hidden="true"
+          >
             <path
               d="M-50 340 Q350 290 750 380 L750 600 L-50 600 Z"
               fill="#e2e4e6"></path>
@@ -186,6 +108,73 @@
             </g>
           </svg>
         </div>
+      </div>
+    </div>
+
+    <!-- 2. DOLNY WIERSZ: Rozłożony od krawędzi do krawędzi (od lewej do prawej) -->
+    <div
+      class="w-full pt-8 grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 items-center"
+    >
+      <!-- Pozycja 1: Lico do lewej krawędzi tekstu -->
+      <div class="flex flex-col items-center lg:items-start text-left w-full">
+        <div
+          class="font-heading text-step-1 font-bold text-body tracking-tight leading-none min-h-[45px] flex items-center justify-start"
+        >
+          <span><span class="text-primary">1 000</span> 000+</span>
+        </div>
+        <p class="text-step-0 text-body/80 mt-2 font-normal leading-snug">
+          kartonów rocznie
+        </p>
+      </div>
+
+      <!-- Pozycja 2: Środek -->
+      <div class="flex flex-col items-center text-center w-full">
+        <div class="min-h-[45px] flex items-center justify-center">
+          <img
+            src={ikonaZegar.src}
+            alt="Szybki czas realizacji"
+            class="w-[45px] h-[45px] object-contain"
+            loading="lazy"
+          />
+        </div>
+        <p class="text-step-0 text-body/80 mt-2 font-normal leading-snug">
+          Szybki czas realizacji
+        </p>
+      </div>
+
+      <!-- Pozycja 3: Środek -->
+      <div class="flex flex-col items-center text-center w-full">
+        <div
+          class="font-heading text-step-1 font-bold text-body tracking-tight leading-none min-h-[45px] flex items-center justify-center"
+        >
+          <span><span class="text-primary">3</span>x</span>
+        </div>
+        <p class="text-step-0 text-body/80 mt-2 font-normal leading-snug">
+          kontrola jakości
+        </p>
+      </div>
+
+      <!-- Pozycja 4: Dociągnięty do prawej krawędzi kontenera -->
+      <div class="flex items-center justify-end w-full">
+        <a
+          href="#oferta"
+          class="inline-flex items-center justify-center gap-3 w-full sm:w-[205px] h-[45px] bg-primary text-[14px] font-medium uppercase tracking-wider leading-none text-white hover:bg-secondary transition-colors duration-300 ease-out cursor-pointer whitespace-nowrap shadow-sm"
+        >
+          <span>ZOBACZ OFERTĘ</span>
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2.5"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </a>
       </div>
     </div>
   </div>

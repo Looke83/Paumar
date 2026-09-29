@@ -13,11 +13,11 @@ const features = [
     <!-- Ramki kropkowane góra / dół w obrębie 1400px -->
     <div class="border-y border-dotted border-neutral-300 py-6 sm:py-7">
       <ul
-        class="flex flex-wrap items-center justify-between gap-y-4 gap-x-6 list-none m-0 p-0"
+        class="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-y-4 gap-x-6 list-none m-0 p-0 w-full"
       >
         {
           features.map((item) => (
-            <li class="flex items-center gap-2.5 text-body text-[15px] sm:text-[16px] font-normal tracking-tight">
+            <li class="flex items-center justify-center lg:justify-start gap-2.5 text-body text-[15px] sm:text-[16px] font-normal tracking-tight text-center lg:text-left">
               {/* Czerwony kwadracik */}
               <span class="w-2 h-2 bg-primary shrink-0" aria-hidden="true" />
               <span>{item}</span>

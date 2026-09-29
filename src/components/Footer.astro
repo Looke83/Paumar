@@ -1,5 +1,5 @@
 ---
-
+import logoPaumar from "../assets/logo.jpg";
 ---
 
 <footer
@@ -18,12 +18,19 @@
   >
     <div class="grid grid-cols-1 md:grid-cols-3 gap-y-10 gap-x-12 items-start">
       <!-- Kolumna 1: Brand & Misja -->
-      <div class="flex flex-col items-start">
+      <div
+        class="flex flex-col items-center md:items-start text-center md:text-left"
+      >
         <a
           href="/"
           class="inline-block font-heading text-step-2 font-black tracking-tight text-white mb-space-s"
         >
-          PAU<span class="text-primary">MAR</span>
+          <img
+            src={logoPaumar.src}
+            alt="PAUMAR - Producent kartonów ozdobnych"
+            class="h-8 sm:h-9 w-auto object-contain"
+            loading="lazy"
+          />
         </a>
         <p
           class="text-step-0 text-neutral-400 font-normal leading-relaxed max-w-sm"
@@ -34,13 +41,17 @@
       </div>
 
       <!-- Kolumna 2: Kontakt & Social -->
-      <div class="flex flex-col items-start">
+      <div
+        class="flex flex-col items-center md:items-start text-center md:text-left"
+      >
         <h3
           class="font-mono text-step-1 font-medium tracking-[0.16em] !text-white uppercase mb-space-s"
         >
           KONTAKT
         </h3>
-        <div class="flex flex-col gap-2 text-step-0 font-normal mb-space-s">
+        <div
+          class="flex flex-col gap-2 text-step-0 font-normal mb-space-s items-center md:items-start"
+        >
           <a
             href="tel:+48111222333"
             class="text-neutral-300 hover:text-white transition-colors duration-200 ease-out"
@@ -76,14 +87,16 @@
       </div>
 
       <!-- Kolumna 3: Dane adresowe z semantyką i geo-linkiem -->
-      <div class="flex flex-col items-start">
-        <p
-          class="font-mono text-step--1 font-medium tracking-[0.16em] !text-white uppercase mb-space-s"
+      <div
+        class="flex flex-col items-center md:items-start text-center md:text-left"
+      >
+        <h3
+          class="font-mono text-step-1 font-medium tracking-[0.16em] !text-white uppercase mb-space-s"
         >
           ADRES
-        </p>
+        </h3>
         <address
-          class="not-italic text-step-0 text-neutral-300 font-normal leading-relaxed flex flex-col gap-1"
+          class="not-italic text-step-0 text-neutral-300 font-normal leading-relaxed flex flex-col gap-1 items-center md:items-start"
         >
           <span class="font-medium text-white">PAUMAR sp. z o.o.</span>
           <a
@@ -103,7 +116,7 @@
   <!-- Pasek dolny (Sub-footer) -->
   <div class="relative z-10 border-t border-neutral-800/80">
     <div
-      class="site-wrapper py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-step--1 text-neutral-500 font-normal"
+      class="site-wrapper py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-step--1 text-neutral-500 font-normal text-center sm:text-left"
     >
       <div>© 2026 PAUMAR. Wszystkie prawa zastrzeżone</div>
       <div>
