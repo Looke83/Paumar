@@ -7,6 +7,14 @@ const offerLinks = [
   { part1: "KARTONY ", part2: "ŚWIĄTECZNE", href: "#oferta" },
   { part1: "KARTONY ", part2: "DLA DZIECI", href: "#oferta" },
 ];
+
+const mainNavLinks = [
+  { label: "Rozmiary kartonów", href: "/rozmiary-kartonow" },
+  { label: "Certyfikaty", href: "/certyfikaty" },
+  { label: "Kontakt", href: "/kontakt" },
+];
+
+const ctaLink = { label: "Zapytaj o wycenę", href: "#wycena" };
 ---
 
 <header class="z-50 w-full border-b border-neutral-200/80 bg-white">
@@ -71,30 +79,25 @@ const offerLinks = [
         </div>
       </div>
 
-      <a
-        href="/rozmiary-kartonow"
-        class="text-body hover:text-secondary transition-colors duration-300 ease-out"
-        >Rozmiary kartonów</a
-      >
-      <a
-        href="/certyfikaty"
-        class="text-body hover:text-secondary transition-colors duration-300 ease-out"
-        >Certyfikaty</a
-      >
-      <a
-        href="/kontakt"
-        class="text-body hover:text-secondary transition-colors duration-300 ease-out"
-        >Kontakt</a
-      >
+      {
+        mainNavLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-body hover:text-secondary transition-colors duration-300 ease-out"
+          >
+            {link.label}
+          </a>
+        ))
+      }
     </nav>
 
     <!-- Right Action Button: prostokąt 181x45 -->
     <div class="hidden md:flex items-center">
       <a
-        href="#wycena"
+        href={ctaLink.href}
         class="inline-flex items-center justify-center w-[181px] h-[45px] bg-body text-[14px] font-medium uppercase tracking-wider leading-none text-white hover:bg-primary transition-colors duration-300 ease-out cursor-pointer whitespace-nowrap"
       >
-        Zapytaj o wycenę
+        {ctaLink.label}
       </a>
     </div>
 
@@ -106,15 +109,12 @@ const offerLinks = [
       aria-controls="mobile-menu"
       aria-label="Przełącz menu nawigacji"
     >
-      <!-- Górna linia: przy aktywnym obraca się o 45 stopni w dół -->
       <span
         class="hamburger-line w-6 h-0.5 bg-body rounded-full transition-all duration-300 ease-in-out origin-center"
       ></span>
-      <!-- Środkowa linia: przy aktywnym zanika -->
       <span
         class="hamburger-line w-6 h-0.5 bg-body rounded-full transition-all duration-200 ease-in-out"
       ></span>
-      <!-- Dolna linia: przy aktywnym obraca się o -45 stopni w górę -->
       <span
         class="hamburger-line w-6 h-0.5 bg-body rounded-full transition-all duration-300 ease-in-out origin-center"
       ></span>
@@ -144,29 +144,26 @@ const offerLinks = [
         </a>
       ))
     }
+
     <div class="border-t border-neutral-100 pt-3 space-y-2">
-      <a
-        href="#rozmiary"
-        class="block px-3 py-2 text-body hover:text-secondary hover:bg-neutral-100 text-step-0 uppercase tracking-wider font-normal transition-colors duration-200 ease-out"
-        >Rozmiary kartonów</a
-      >
-      <a
-        href="#certyfikaty"
-        class="block px-3 py-2 text-body hover:text-secondary hover:bg-neutral-100 text-step-0 uppercase tracking-wider font-normal transition-colors duration-200 ease-out"
-        >Certyfikaty</a
-      >
-      <a
-        href="/kontakt"
-        class="block px-3 py-2 text-body hover:text-secondary hover:bg-neutral-100 text-step-0 uppercase tracking-wider font-normal transition-colors duration-200 ease-out"
-        >Kontakt</a
-      >
+      {
+        mainNavLinks.map((link) => (
+          <a
+            href={link.href}
+            class="block px-3 py-2 text-body hover:text-secondary hover:bg-neutral-100 text-step-0 uppercase tracking-wider font-normal transition-colors duration-200 ease-out"
+          >
+            {link.label}
+          </a>
+        ))
+      }
     </div>
+
     <div class="pt-3">
       <a
-        href="#wycena"
+        href={ctaLink.href}
         class="w-full h-[45px] inline-flex items-center justify-center bg-body text-[14px] font-medium uppercase tracking-wider leading-none text-white hover:bg-primary transition-colors duration-300 ease-out"
       >
-        Zapytaj o wycenę
+        {ctaLink.label}
       </a>
     </div>
   </div>
